@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  vymenik:
+    image: 
+    container_name: 
+    hostname: 
+    logging:
+      driver: syslog
+      options:
+        syslog-format: rfc3164
+        syslog-address: udp://127.0.0.1:514
+        tag: 
+    volumes:
+    - type: bind
+      source: /data/volumes/okb-vymenik/conf
+      target: /idm/conf
+      read_only: true
+    - type: bind
+      source: /data/volumes/okb-vymenik/pki/isrgrootx1.crt
+      target: /etc/pki/ca-trust/source/anchors/isrgrootx1.crt
+      read_only: true
+
+    networks:
+      - appliance
+
+networks:
+  appliance:
+    external: true
+
