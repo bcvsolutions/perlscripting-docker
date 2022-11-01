@@ -4,8 +4,7 @@ version: '3.2'
 
 services:
   perlscripting:
-    image: perlsc:latest
-#    image: bcv-perlscripting:1.0-r0
+    image: bcv-perlscripting:1.0-r0
     container_name: perlscripting
     hostname: perlscripting
     environment:
@@ -17,5 +16,5 @@ services:
       read_only: false
     - type: bind
       source: ./certs
-      target: /etc/pki/ca-trust/source/anchors/
+      target: /etc/pki/ca-trust/source/anchors
       read_only: true

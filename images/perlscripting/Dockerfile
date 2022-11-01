@@ -30,7 +30,7 @@ RUN yum-config-manager --add-repo=https://yum.oracle.com/repo/OracleLinux/OL7/or
     yum install -y oracle-instantclient${INSTCLIENT_VERSION}-{basic,devel,sqlplus} && \
     yum clean all
 
-RUN cpanm -v install DBD::Oracle
+RUN cpanm -v install DBD::Oracle~"==1.83"
 
 # copy runscripts
 COPY runscripts "$RUNSCRIPTS_PATH/"
