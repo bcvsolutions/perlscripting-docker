@@ -7,7 +7,7 @@ This image is versioned by our dockerfile version, it is not tied to PERL versio
 Naming scheme is as follows: **bcv-perlscripting:GENERAL_VERSION-rIMAGE_VERSION**.
 - Image name is **bcv-perlscripting**.
 - **GENERAL_VERSION** is a version defined by BCV developers. Version change signifies changes more or less according to SemVer.
-- **IMAGE_VERSION** is an image release version written as a serial number, starting at 0. When images have the same general versions but different image versions it means there were some cosmetic changes in the image itself (setup scripts, etc.) **but no features were removed**.
+- **IMAGE_VERSION** is an image release version written as a serial number, starting at 0. When images have the same general versions but different image versions it means there were some cosmetic changes in the image itself (i.e. bugfixes).
 
 Example:
 ```
