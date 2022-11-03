@@ -1,0 +1,20 @@
+# Example compose file for Connector server
+
+version: '3.2'
+
+services:
+  perlscripting:
+    image: bcv-perlscripting:1.0-r0
+    container_name: perlscripting
+    hostname: perlscripting
+    environment:
+      - TZ=Europe/Prague
+    volumes:
+    - type: bind
+      source: ./scripts
+      target: /opt/scripts
+      read_only: false
+    - type: bind
+      source: ./certs
+      target: /etc/pki/ca-trust/source/anchors
+      read_only: true
