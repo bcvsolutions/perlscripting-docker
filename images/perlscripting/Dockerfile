@@ -1,4 +1,3 @@
-# FROM perl:5.34
 FROM repo.iamappliance.com:8443/centos:7
 
 ENV SCRIPT_HOME /opt/scripts
@@ -8,7 +7,7 @@ ENV RUNSCRIPTS_PATH /runscripts
 # RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo
 RUN yum install -y epel-release && \
     yum update -y && \
-    yum install -y gcc perl perl-devel perl-libwww-perl perl-App-cpanminus perl-B-Lint perl-Data-Dumper perl-DBI perl-DBD-Pg perl-DBD-MySQL perl-LWP-Protocol-https perl-Socket perl-Socket6 perl-SOAP-Lite perl-Switch perl-Test-NoWarnings perl-Test-Simple perl-Try-Tiny perl-YAML-Tiny sudo wget && \
+    yum install -y gcc perl perl-devel perl-libwww-perl perl-App-cpanminus perl-B-Lint perl-Data-Dumper perl-DBI perl-DBD-Pg perl-DBD-MySQL perl-File-Slurp perl-LWP-Protocol-https perl-Socket perl-Socket6 perl-SOAP-Lite perl-Switch perl-Test-NoWarnings perl-Test-Simple perl-Try-Tiny perl-XML-LibXML perl-YAML-Tiny psmisc sudo wget && \
     yum clean all
 
 RUN groupadd -r -g 998 perlscripting && \
